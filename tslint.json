@@ -9,11 +9,83 @@
     ]
   },
   "rules": {
-    "indent": [true, "spaces", 2],
-    "interface-name": false,
+    // TS特性]
+    "max-line-length": [
+      false
+    ],
+    "variable-name": [
+      true,
+      "ban-keywords",
+      "check-format",
+      "allow-leading-underscore",
+      "allow-pascal-case"
+    ],
+    "no-console": [
+      false
+    ],
+    "vue/no-parsing-error": [
+      2,
+      {
+        "x-invalid-end-tag": false
+      }
+    ],
+    "space-before-function-paren": [
+      true,
+      {
+        "anonymous": "always",
+        "named": "never",
+        "asyncArrow": "always"
+      }
+    ],
+    "triple-equals": false,
+    "no-empty": false,
+    "semicolon": [
+      true,
+      "never"
+    ],
+    "whitespace": [
+      true,
+      "check-branch",
+      "check-decl",
+      "check-operator",
+      "check-separator",
+      "check-type"
+    ],
+    //是否连续空行
     "no-consecutive-blank-lines": false,
+    //单引号
+    "quotemark": [
+      true,
+      "single",
+      "avoid-escape",
+      "avoid-template"
+    ],
+    //禁止使用var
+    "no-var-keyword": true,
+    //禁止尾随,
+    "trailing-comma": [
+      false,
+      {
+        "multiline": "always",
+        "singleline": "never"
+      }
+    ],
+    //禁止必须方法声明
+    "member-access": false,
+    //对象字母排序
     "object-literal-sort-keys": false,
+    //引入字母排序
     "ordered-imports": false,
-    "quotemark": [true, "single"]
+    //接口名称规范
+    "interface-name": false,
+    //空格注释
+    "comment-format": [
+      false,
+      "check-space"
+    ],
+    //箭头函数括号非必须
+    "arrow-parens": false,
+    //屏蔽变量声明
+    "no-shadowed-variable": false
   }
 }
