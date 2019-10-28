@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    /*//@page样式是用来设置打印机打印出来的样式，例如设置小票外边距样式*/
+    @page {
+      margin: 0px;
+    }
+  </style>
+</head>
+<body id='bd'>
+aaa
+</body>
+<script>
+  //引入ipcRenderer对象
+  const {ipcRenderer} = require('electron')
+
+  //监听渲染线程传过来的webview-print-render事件
+  ipcRenderer.on('webview-print-render', (event, deviceInfo) => {
+    // 动态创建一个img标签，然后插入到<body>中。deviceInfo是渲染线程传过来的数据
+    let html = '';
+    html = `<img src="${deviceInfo.imgSource}"
+   width="${deviceInfo.imgWidth}px"
+   height="${deviceInfo.imgHeight}px">`;
+    document.getElementById('bd').innerHTML = html;
+    alert('aaa')
+    //当图片插入到页面后，通过ipcRenderer对象的sendToHost方法和渲染线程通讯，告诉渲染线程打印的内容已经准备完毕，请开始打印操作
+    ipcRenderer.sendToHost('webview-print-do');
+  });
+</script>
+</html>
