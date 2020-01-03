@@ -31,6 +31,15 @@ module.exports = {
             provider: 'generic',
             url: 'http://127.0.0.1/'//版本更新地址
           }
+        ],
+        asarUnpack: [
+          '**/src/binary/**',
+        ],
+        extraResources: [
+          {
+            'from': 'src/binary',
+            'to': 'app.asar.unpacked/printer'
+          }
         ]
       }
     }

@@ -62,6 +62,7 @@
     ],
     //禁止使用var
     "no-var-keyword": true,
+    "no-var-requires": false,
     //禁止尾随,
     "trailing-comma": [
       false,
