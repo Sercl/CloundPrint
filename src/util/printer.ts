@@ -6,6 +6,7 @@ const NodePdfPrinter = {
   printFiles(pdfFiles: string[], printerName: string) {
     return new Promise((resolve, reject) => {
       //const execPath = path.join(__dirname.replace('app.asar', 'app.asar.unpacked'))
+      //生成命令
       const execPath = path.join(__dirname, 'resources', 'app.asar.unpacked', 'printer')
       let createFile = '@echo off \n'
       createFile += 'cd ' + execPath + '\n'
